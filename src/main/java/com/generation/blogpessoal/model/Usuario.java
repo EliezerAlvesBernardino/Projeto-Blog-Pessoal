@@ -1,6 +1,7 @@
 package com.generation.blogpessoal.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -19,6 +20,7 @@ public class Usuario {
     @NotNull(message = "O atributo Nome é obrigatório!")
     private String nome;
 
+    @Schema(example = "email@email.com.br")
     @NotNull(message = "O atribuito Usuário é obrigatorio!")
     @Email(message = "O atributo Usuário deve ser um email válido!")
     private String usuario;
@@ -90,6 +92,9 @@ public class Usuario {
         this.foto = foto;
     }
     public Usuario(){ }
+
+
+
 
 
 
